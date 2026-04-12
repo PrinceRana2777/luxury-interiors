@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-luxury-black: #0f0f0f;
+  --color-luxury-gold: #c9a45c;
+  --color-luxury-white: #ffffff;
+  --color-luxury-teal: #0f3d3e;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans bg-white text-luxury-black antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-bold;
+  }
+
+  section {
+    @apply py-20 md:py-[80px];
+  }
+}
+
+.glass-nav {
+  background: rgba(15, 15, 15, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(201, 164, 92, 0.2);
+}
+
+.luxury-card {
+  @apply bg-white rounded-[15px] shadow-lg transition-all duration-500 hover:shadow-2xl hover:-translate-y-2;
+}
+
+.btn-gold {
+  @apply bg-luxury-gold text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest transition-all duration-500 hover:bg-luxury-teal hover:scale-105 active:scale-95 shadow-lg;
+}
+
+.image-zoom {
+  @apply overflow-hidden;
+}
+
+.image-zoom img {
+  @apply transition-transform duration-700 hover:scale-110;
+}
+
+.fade-in-section {
+  @apply opacity-0 translate-y-10 transition-all duration-1000;
+}
+
+.fade-in-section.visible {
+  @apply opacity-100 translate-y-0;
+}
