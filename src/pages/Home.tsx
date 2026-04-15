@@ -6,13 +6,13 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <div className="pt-20">
+    <div>
       <Hero />
       
       {/* Intro Section */}
       <section className="bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+        <div className="container-luxury">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -59,22 +59,17 @@ const Home = () => {
 
       {/* Featured Furniture */}
       <section className="bg-luxury-cream">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-            <div>
-              <span className="text-luxury-gold uppercase tracking-[0.5em] text-xs font-bold mb-4 block">Exquisite Collection</span>
-              <h2 className="text-4xl md:text-6xl font-serif">Featured Furniture</h2>
-            </div>
-            <Link to="/gallery" className="text-[10px] uppercase tracking-[0.3em] font-bold border-b-2 border-luxury-gold pb-2 hover:text-luxury-gold transition-colors">
-              View All Collection
-            </Link>
+        <div className="container-luxury">
+          <div className="text-center mb-16">
+            <span className="text-luxury-gold uppercase tracking-[0.5em] text-xs font-bold mb-4 block">Exquisite Collection</span>
+            <h2 className="text-4xl md:text-6xl font-serif mb-6">Featured Furniture</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { name: 'The Royal Sofa', price: 'Premium', img: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=800' },
               { name: 'Velvet Lounge Chair', price: 'Luxury', img: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=800' },
-              { name: 'Marble Dining Table', price: 'Bespoke', img: 'https://images.unsplash.com/photo-1530018607912-eff2df114f11?auto=format&fit=crop&q=80&w=800' }
+              { name: 'Marble Dining Table', price: 'Bespoke', img: 'https://iili.io/BkiohX9.md.webp' }
             ].map((item, i) => (
               <motion.div
                 key={item.name}
@@ -84,8 +79,8 @@ const Home = () => {
                 viewport={{ once: true }}
                 className="group cursor-pointer"
               >
-                <div className="luxury-card overflow-hidden mb-8">
-                  <div className="relative aspect-[4/5] overflow-hidden">
+                <div className="luxury-card overflow-hidden mb-6">
+                  <div className="relative h-[350px] overflow-hidden">
                     <img src={item.img} alt={item.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" referrerPolicy="no-referrer" />
                     <div className="absolute inset-0 bg-luxury-black/20 group-hover:bg-luxury-black/0 transition-colors duration-500" />
                     <div className="absolute top-6 right-6 bg-white/90 backdrop-blur-md px-5 py-2 rounded-full text-[10px] uppercase tracking-[0.2em] font-bold text-luxury-black shadow-lg">
@@ -93,8 +88,10 @@ const Home = () => {
                     </div>
                   </div>
                 </div>
-                <h3 className="text-2xl font-serif mb-2 group-hover:text-luxury-gold transition-colors">{item.name}</h3>
-                <p className="text-gray-400 text-[10px] uppercase tracking-[0.3em] font-bold">Furniture Design</p>
+                <div className="text-center">
+                  <h3 className="text-2xl font-serif mb-2 group-hover:text-luxury-gold transition-colors">{item.name}</h3>
+                  <p className="text-gray-400 text-[10px] uppercase tracking-[0.3em] font-bold">Furniture Design</p>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -103,13 +100,13 @@ const Home = () => {
 
       {/* Testimonials */}
       <section className="bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-20">
+        <div className="container-luxury">
+          <div className="text-center mb-16">
             <span className="text-luxury-gold uppercase tracking-[0.5em] text-xs font-bold mb-4 block">Client Stories</span>
             <h2 className="text-4xl md:text-6xl font-serif">What Our Clients Say</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { name: 'Rajesh Mehta', role: 'Home Owner', text: 'Luxury Interior transformed our apartment into a dream home. Their attention to detail in the modular kitchen is exceptional.' },
               { name: 'Priya Sharma', role: 'Villa Owner', text: 'The custom furniture they manufactured for our living room is the highlight of our house. Truly world-class quality.' },

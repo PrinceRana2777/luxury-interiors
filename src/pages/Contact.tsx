@@ -4,7 +4,7 @@ import { Phone, Mail, MapPin, Send, MessageCircle } from 'lucide-react';
 
 const Contact = () => {
   return (
-    <div className="pt-20">
+    <div className="pt-24">
       {/* Page Header */}
       <section className="relative py-32 bg-luxury-black text-white overflow-hidden !py-32">
         <div className="absolute inset-0 opacity-40">
@@ -15,7 +15,7 @@ const Contact = () => {
             referrerPolicy="no-referrer"
           />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
+        <div className="relative z-10 container-luxury text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -27,8 +27,8 @@ const Contact = () => {
       </section>
 
       <section className="bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
+        <div className="container-luxury">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Details */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -41,7 +41,7 @@ const Contact = () => {
                 Whether you have a specific project in mind or just want to explore possibilities, we're here to help you create a space that truly reflects your style.
               </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="luxury-card p-10 group hover:bg-luxury-black transition-all duration-500">
                   <div className="w-14 h-14 bg-luxury-cream rounded-2xl flex items-center justify-center text-luxury-gold group-hover:bg-luxury-gold group-hover:text-white transition-all duration-500">
                     <Phone size={28} />
@@ -136,15 +136,19 @@ const Contact = () => {
           </div>
 
           {/* Map */}
-          <div className="mt-24 h-[500px] rounded-[20px] overflow-hidden shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000 border-8 border-white">
+          <div className="mt-24 text-center mb-10">
+            <h2 className="text-4xl md:text-5xl font-serif mb-4">Visit Our Showroom</h2>
+            <p className="text-luxury-gold uppercase tracking-[0.3em] text-xs font-bold">Naigaon East, Vasai-Virar, Maharashtra</p>
+          </div>
+          <div className="h-[400px] rounded-[30px] overflow-hidden shadow-2xl border-8 border-white">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.454743242044!2d72.8643!3d19.3321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDE5JzU1LjYiTiA3MsKwNTEnNTEuNSJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" 
+              src="https://maps.google.com/maps?q=19.358111,72.869472&z=15&output=embed" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 
               allowFullScreen={true} 
               loading="lazy"
-              title="Luxury Interior Location"
+              title="Luxury Interior Showroom Location"
             ></iframe>
           </div>
         </div>

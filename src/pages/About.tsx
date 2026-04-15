@@ -4,7 +4,7 @@ import { CheckCircle2, Target, Eye, Award } from 'lucide-react';
 
 const About = () => {
   return (
-    <div className="pt-20">
+    <div className="pt-24">
       {/* Page Header */}
       <section className="relative py-32 bg-luxury-black text-white overflow-hidden !py-32">
         <div className="absolute inset-0 opacity-40">
@@ -15,7 +15,7 @@ const About = () => {
             referrerPolicy="no-referrer"
           />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
+        <div className="relative z-10 container-luxury text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -28,8 +28,8 @@ const About = () => {
 
       {/* Company Intro */}
       <section className="bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+        <div className="container-luxury">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -76,10 +76,10 @@ const About = () => {
               className="grid grid-cols-2 gap-6"
             >
               <div className="image-zoom rounded-2xl shadow-2xl mt-16">
-                <img src="https://images.unsplash.com/photo-1534349762230-e0cadf78f5db?auto=format&fit=crop&q=80&w=800" className="h-[450px] w-full object-cover" alt="Work 1" referrerPolicy="no-referrer" />
+                <img src="https://images.unsplash.com/photo-1534349762230-e0cadf78f5db?auto=format&fit=crop&q=80&w=800" className="h-[350px] w-full object-cover" alt="Work 1" referrerPolicy="no-referrer" />
               </div>
               <div className="image-zoom rounded-2xl shadow-2xl">
-                <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800" className="h-[450px] w-full object-cover" alt="Work 2" referrerPolicy="no-referrer" />
+                <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800" className="h-[350px] w-full object-cover" alt="Work 2" referrerPolicy="no-referrer" />
               </div>
             </motion.div>
           </div>
@@ -88,8 +88,8 @@ const About = () => {
 
       {/* Mission & Vision */}
       <section className="bg-luxury-teal text-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="container-luxury">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -121,11 +121,11 @@ const About = () => {
 
       {/* Why Choose Us */}
       <section className="bg-white">
-        <div className="max-w-7xl mx-auto px-6 text-center">
+        <div className="container-luxury text-center">
           <span className="text-luxury-gold uppercase tracking-[0.5em] text-xs font-bold mb-6 block">Our Values</span>
-          <h2 className="text-4xl md:text-6xl font-serif mb-20">Why Choose Us</h2>
+          <h2 className="text-4xl md:text-6xl font-serif mb-16">Why Choose Us</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { title: 'Quality Materials', desc: 'We use only the finest woods, fabrics, and finishes for our furniture.' },
               { title: 'Expert Team', desc: 'Our designers and craftsmen are masters of their respective trades.' },
