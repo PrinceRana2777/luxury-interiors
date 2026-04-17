@@ -30,8 +30,10 @@ const Navbar = () => {
 
   useEffect(() => {
     setIsOpen(false);
-    window.scrollTo(0, 0);
-  }, [location]);
+    if (!location.hash) {
+      window.scrollTo(0, 0);
+    }
+  }, [location.pathname, location.hash]);
 
   const navLinks = [
     { name: 'Home', href: '/' },
