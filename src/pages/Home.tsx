@@ -99,49 +99,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Featured Furniture */}
-      <section className="bg-luxury-cream">
-        <div className="container-luxury">
-          <div className="text-center mb-16">
-            <span className="text-luxury-gold uppercase tracking-[0.5em] text-xs font-bold mb-4 block">Exquisite Collection</span>
-            <h2 className="text-4xl md:text-6xl font-serif mb-6">Featured Furniture</h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { name: 'The Royal Sofa', price: 'Premium', img: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=800', id: 'sofa' },
-              { name: 'Velvet Lounge Chair', price: 'Luxury', img: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=800', id: 'sofa' },
-              { name: 'Marble Dining Table', price: 'Bespoke', img: 'https://iili.io/BkiohX9.md.webp', id: 'dining' }
-            ].map((item, i) => (
-              <motion.div
-                key={item.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.2, duration: 0.8 }}
-                viewport={{ once: true }}
-                className="group"
-              >
-                <Link to={`/services#${item.id}`} className="block cursor-pointer">
-                  <div className="luxury-card overflow-hidden mb-6">
-                    <div className="relative h-[350px] overflow-hidden">
-                      <img src={item.img} alt={item.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" referrerPolicy="no-referrer" />
-                      <div className="absolute inset-0 bg-luxury-black/20 group-hover:bg-luxury-black/0 transition-colors duration-500" />
-                      <div className="absolute top-6 right-6 bg-white/90 backdrop-blur-md px-5 py-2 rounded-full text-[10px] uppercase tracking-[0.2em] font-bold text-luxury-black shadow-lg">
-                        {item.price}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="text-center">
-                    <h3 className="text-2xl font-serif mb-2 group-hover:text-luxury-gold transition-colors">{item.name}</h3>
-                    <p className="text-gray-400 text-[10px] uppercase tracking-[0.3em] font-bold">Furniture Design</p>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Testimonials */}
       <section className="bg-white">
         <div className="container-luxury">

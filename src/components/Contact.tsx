@@ -51,7 +51,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-serif text-xl mb-1">Email Us</h4>
-                  <p className="text-gray-600">info@luxuryinterior.com</p>
+                  <a href="mailto:luxuryinteriorsmanufacturer@gmail.com" className="text-gray-600 hover:text-luxury-gold transition-colors">luxuryinteriorsmanufacturer@gmail.com</a>
                 </div>
               </div>
             </div>

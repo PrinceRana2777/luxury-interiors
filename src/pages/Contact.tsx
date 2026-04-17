@@ -80,7 +80,7 @@ const Contact = () => {
                     <Mail size={28} />
                   </div>
                   <h4 className="font-serif text-2xl mb-4 group-hover:text-white transition-colors">Email Us</h4>
-                  <a href="mailto:info@luxuryinterior.com" className="text-gray-500 group-hover:text-gray-300 transition-colors font-medium hover:text-luxury-gold">info@luxuryinterior.com</a>
+                  <a href="mailto:luxuryinteriorsmanufacturer@gmail.com" className="text-gray-500 group-hover:text-gray-300 transition-colors font-medium hover:text-luxury-gold">luxuryinteriorsmanufacturer@gmail.com</a>
                 </div>
               </div>
             </motion.div>
