@@ -1,8 +1,26 @@
-import React from 'react';
-import { motion } from 'motion/react';
-import { CheckCircle2, Target, Eye, Award } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { CheckCircle2, Target, Eye, Award, ChevronLeft, ChevronRight } from 'lucide-react';
+
+const showroomImages = [
+  'https://iili.io/BU6ymYl.md.jpg',
+  'https://iili.io/BUP9EZX.md.jpg',
+  'https://iili.io/BUP91jt.md.jpg'
+];
 
 const About = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % showroomImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % showroomImages.length);
+  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + showroomImages.length) % showroomImages.length);
+
   return (
     <div className="pt-24">
       {/* Page Header */}
@@ -26,8 +44,116 @@ const About = () => {
         </div>
       </section>
 
-      {/* Company Intro */}
-      <section className="bg-white">
+      {/* Showroom Showcase Slider */}
+      <section className="bg-white pt-24">
+        <div className="container-luxury">
+          <div className="text-center mb-12">
+            <span className="text-luxury-gold uppercase tracking-[0.3em] text-xs font-bold mb-4 block">Our Showroom</span>
+            <h2 className="text-4xl md:text-5xl font-serif">A Glimpse of <span className="italic">Luxury</span></h2>
+          </div>
+          
+          <div className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl group">
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={currentSlide}
+                src={showroomImages[currentSlide]}
+                initial={{ opacity: 0, scale: 1.1 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.8 }}
+                className="absolute inset-0 w-full h-full object-cover"
+                alt={`Showroom Slide ${currentSlide + 1}`}
+                referrerPolicy="no-referrer"
+              />
+            </AnimatePresence>
+            
+            {/* Overlay Gradient */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+
+            {/* Navigation Arrows */}
+            <button 
+              onClick={prevSlide}
+              className="absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/20 hover:bg-luxury-gold hover:text-luxury-black transition-all duration-300 opacity-0 group-hover:opacity-100"
+            >
+              <ChevronLeft size={24} />
+            </button>
+            <button 
+              onClick={nextSlide}
+              className="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/20 hover:bg-luxury-gold hover:text-luxury-black transition-all duration-300 opacity-0 group-hover:opacity-100"
+            >
+              <ChevronRight size={24} />
+            </button>
+
+            {/* Dots */}
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3">
+              {showroomImages.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentSlide(i)}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    currentSlide === i ? 'w-8 bg-luxury-gold' : 'bg-white/50'
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Owner Section */}
+      <section className="bg-white py-24 overflow-hidden">
+        <div className="container-luxury">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative"
+            >
+              <div className="relative z-10 rounded-2xl overflow-hidden shadow-xl border border-luxury-gold/5">
+                <img 
+                  src="https://iili.io/BUPCWYX.md.jpg" 
+                  alt="Mr. Mahmood Malik - Founder of Luxury Interior" 
+                  className="w-full h-auto object-cover hover:scale-[1.03] transition-transform duration-700"
+                  style={{ imageRendering: 'auto' }}
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <div className="absolute -bottom-8 -right-8 w-64 h-64 bg-luxury-gold/10 rounded-full blur-3xl -z-10" />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <span className="text-luxury-gold uppercase tracking-[0.3em] text-xs font-bold mb-6 block font-bold">Meet the Founder</span>
+              <h2 className="text-4xl md:text-5xl font-serif mb-6">Mastering the Art of <span className="italic text-luxury-gold">Spaces</span></h2>
+              <h3 className="text-2xl font-serif text-luxury-black mb-8">Mr. Mahmood Malik <span className="text-luxury-gold text-lg block italic font-sans font-normal mt-1 opacity-70">Founder & Interior Specialist</span></h3>
+              
+              <p className="text-gray-500 text-lg leading-relaxed font-medium mb-10 italic border-l-4 border-luxury-gold pl-8 py-2 bg-luxury-cream/30 rounded-r-xl">
+                "With years of experience in custom furniture and interior design, Mr. Mahmood Malik has built Luxury Interior into a trusted name for premium craftsmanship and modern living solutions. Our mission is to transform every corner of your home into a masterpiece."
+              </p>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div className="flex flex-col gap-2">
+                  <span className="text-3xl font-serif font-bold text-luxury-gold">15+</span>
+                  <span className="text-xs uppercase tracking-widest text-gray-400 font-bold">Years of Passion</span>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <span className="text-3xl font-serif font-bold text-luxury-gold">1000+</span>
+                  <span className="text-xs uppercase tracking-widest text-gray-400 font-bold">Designs Delivered</span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Company Intro (Old Legacy) */}
+      <section className="bg-luxury-cream/30 py-24">
         <div className="container-luxury">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div

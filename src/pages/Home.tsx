@@ -59,8 +59,8 @@ const Home = () => {
                 />
               </div>
               <div className="absolute -bottom-10 -left-10 bg-luxury-black text-white p-10 rounded-[20px] shadow-2xl hidden md:block z-20 border border-luxury-gold/20">
-                <p className="text-4xl font-serif mb-1 text-luxury-gold">500+</p>
-                <p className="text-[10px] uppercase tracking-[0.3em] font-bold opacity-70">Projects Completed</p>
+                <p className="text-4xl font-serif mb-1 text-luxury-gold">1000+</p>
+                <p className="text-[10px] uppercase tracking-[0.3em] font-bold opacity-70">Projects Completed Successfully</p>
               </div>
               <div className="absolute -top-10 -right-10 w-40 h-40 bg-luxury-gold/10 rounded-full blur-3xl -z-10" />
             </motion.div>

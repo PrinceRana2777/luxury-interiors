@@ -4,9 +4,9 @@ import { Phone, Mail, MapPin, Send } from 'lucide-react';
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-24 bg-white">
+    <section id="contact" className="pt-24 pb-0 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24">
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -51,7 +51,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-serif text-xl mb-1">Email Us</h4>
-                  <a href="mailto:luxuryinteriorsmanufacturer@gmail.com" className="text-gray-600 hover:text-luxury-gold transition-colors">luxuryinteriorsmanufacturer@gmail.com</a>
+                  <a href="mailto:luxuryinteriorsmanufacturer@gmail.com?subject=Interior Inquiry" className="text-gray-600 hover:text-luxury-gold transition-colors">luxuryinteriorsmanufacturer@gmail.com</a>
                 </div>
               </div>
             </div>
@@ -109,7 +109,7 @@ const Contact = () => {
         </div>
 
         {/* Map Placeholder */}
-        <div className="mt-24 h-[400px] rounded-3xl overflow-hidden shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000">
+        <div className="h-[400px] rounded-xl overflow-hidden shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000">
           <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.454743242044!2d72.8643!3d19.3321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDE5JzU1LjYiTiA3MsKwNTEnNTEuNSJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" 
             width="100%" 

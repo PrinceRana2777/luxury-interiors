@@ -26,9 +26,9 @@ const Contact = () => {
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-white pt-24 pb-0">
         <div className="container-luxury">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24">
             {/* Contact Details */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -80,7 +80,7 @@ const Contact = () => {
                     <Mail size={28} />
                   </div>
                   <h4 className="font-serif text-2xl mb-4 group-hover:text-white transition-colors">Email Us</h4>
-                  <a href="mailto:luxuryinteriorsmanufacturer@gmail.com" className="text-gray-500 group-hover:text-gray-300 transition-colors font-medium hover:text-luxury-gold">luxuryinteriorsmanufacturer@gmail.com</a>
+                  <a href="mailto:luxuryinteriorsmanufacturer@gmail.com?subject=Interior Inquiry" className="text-gray-500 group-hover:text-gray-300 transition-colors font-medium hover:text-luxury-gold">luxuryinteriorsmanufacturer@gmail.com</a>
                 </div>
               </div>
             </motion.div>
@@ -136,11 +136,11 @@ const Contact = () => {
           </div>
 
           {/* Map */}
-          <div className="mt-24 text-center mb-10">
+          <div className="mt-0 text-center mb-10">
             <h2 className="text-4xl md:text-5xl font-serif mb-4">Visit Our Showroom</h2>
             <p className="text-luxury-gold uppercase tracking-[0.3em] text-xs font-bold">Naigaon East, Vasai-Virar, Maharashtra</p>
           </div>
-          <div className="h-[400px] rounded-[30px] overflow-hidden shadow-2xl border-8 border-white">
+          <div className="h-[400px] rounded-xl overflow-hidden shadow-2xl border-8 border-white">
             <iframe 
               src="https://maps.google.com/maps?q=19.358111,72.869472&z=15&output=embed" 
               width="100%" 
