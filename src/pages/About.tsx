@@ -52,36 +52,37 @@ const About = () => {
             <h2 className="text-4xl md:text-5xl font-serif">A Glimpse of <span className="italic">Luxury</span></h2>
           </div>
           
-          <div className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl group">
+          <div className="relative w-full max-w-5xl mx-auto overflow-hidden rounded-2xl shadow-xl group bg-luxury-cream/10">
             <AnimatePresence mode="wait">
               <motion.img
                 key={currentSlide}
                 src={showroomImages[currentSlide]}
-                initial={{ opacity: 0, scale: 1.1 }}
+                initial={{ opacity: 0, scale: 1.02 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.8 }}
-                className="absolute inset-0 w-full h-full object-cover"
+                exit={{ opacity: 0, scale: 1.02 }}
+                transition={{ duration: 0.6 }}
+                className="w-full h-auto object-cover transition-transform duration-1000 group-hover:scale-[1.03]"
+                style={{ imageRendering: 'auto', maxHeight: '70vh' }}
                 alt={`Showroom Slide ${currentSlide + 1}`}
                 referrerPolicy="no-referrer"
               />
             </AnimatePresence>
             
             {/* Overlay Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
 
             {/* Navigation Arrows */}
             <button 
               onClick={prevSlide}
-              className="absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/20 hover:bg-luxury-gold hover:text-luxury-black transition-all duration-300 opacity-0 group-hover:opacity-100"
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/20 backdrop-blur-lg rounded-full flex items-center justify-center text-white border border-white/30 hover:bg-luxury-gold hover:text-luxury-black transition-all duration-300 opacity-0 group-hover:opacity-100 shadow-lg"
             >
-              <ChevronLeft size={24} />
+              <ChevronLeft size={20} />
             </button>
             <button 
               onClick={nextSlide}
-              className="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/20 hover:bg-luxury-gold hover:text-luxury-black transition-all duration-300 opacity-0 group-hover:opacity-100"
+              className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/20 backdrop-blur-lg rounded-full flex items-center justify-center text-white border border-white/30 hover:bg-luxury-gold hover:text-luxury-black transition-all duration-300 opacity-0 group-hover:opacity-100 shadow-lg"
             >
-              <ChevronRight size={24} />
+              <ChevronRight size={20} />
             </button>
 
             {/* Dots */}
